@@ -13,14 +13,15 @@ import mapError from './mapError'
 
 export default createComponent(
   AutoComplete,
-  ({ input: { onChange, value, ...inputProps }, searchText, handleSelect, ...props}) => ({
+  ({ input: { onChange, value, ...inputProps }, searchText, handleSelect, ...props }) => ({
     ...mapError(props),
     ...inputProps,
     searchText: searchText || value,
-    onNewRequest: (selected, index) => {
-      value = selected.value;
-      handleSelect(selected.object);
-      return onChange(selected.text);
+    onNewRequest: (selected) => {
+      value = selected.value
+      handleSelect(selected.object)
+      return onChange(selected.text)
     }
   })
-);
+)
+

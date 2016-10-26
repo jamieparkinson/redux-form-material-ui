@@ -20,7 +20,14 @@ import mapError from './mapError'
 
 export default createComponent(
   DatePicker,
-  ({ input: { onBlur, onChange, ...inputProps }, ..props }) => ({
+  ({
+    input: {
+      onBlur, // eslint-disable-line no-unused-vars
+      onChange,
+      ...inputProps
+    },
+    ...props
+  }) => ({
     ...inputProps,
     ...mapError(props),
     onChange: (event, value) => onChange(value),

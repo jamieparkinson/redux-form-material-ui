@@ -72,13 +72,14 @@ describe('AutoComplete', () => {
     const dom = TestUtils.renderIntoDocument(
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <ReduxFormMaterialUIAutoComplete dataSource={dataSource} name="myAutoComplete"
+          handleSelect={() => true}
           input={{ onChange, value: 'Foo' }}/>
       </MuiThemeProvider>
     )
 
     const autocomplete = TestUtils.findRenderedComponentWithType(dom, AutoComplete)
     expect(onChange).toNotHaveBeenCalled()
-    autocomplete.props.onNewRequest('TheValue')
+    autocomplete.props.onNewRequest({ text: 'TheValue', value: 'TheValue', object: null })
     expect(onChange)
       .toHaveBeenCalled()
       .toHaveBeenCalledWith('TheValue')

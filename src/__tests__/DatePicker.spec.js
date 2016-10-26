@@ -16,13 +16,15 @@ describe('DatePicker', () => {
   })
 
   it('renders a DatePicker with no value', () => {
+    const value = null
     expect(new ReduxFormMaterialUIDatePicker({
       input: {
         name: 'myDatePicker',
-        onChange: noop
+        onChange: noop,
+        value
       }
     }).render())
-      .toEqualJSX(<DatePicker name="myDatePicker" onChange={noop} ref="component"/>)
+      .toEqualJSX(<DatePicker name="myDatePicker" onChange={noop} ref="component" value={value}/>)
   })
 
   it('renders a DatePicker with a value', () => {
