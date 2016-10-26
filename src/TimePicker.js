@@ -26,10 +26,12 @@ export default createComponent(
       onChange,
       ...inputProps
     },
+    timeFormat,
     ...props
   }) => ({
     ...inputProps,
     ...mapError(props),
+    format: timeFormat,
     onChange: (event, value) => onChange(value),
     value: inputProps.value !== '' ? inputProps.value : null
   })
