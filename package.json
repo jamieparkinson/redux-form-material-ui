@@ -1,5 +1,5 @@
 {
-  "name": "redux-form-material-ui",
+  "name": "@jamieparkinson/redux-form-material-ui",
   "version": "4.1.0",
   "description": "An adapter between Redux Form and Material UI components",
   "main": "./lib/index.js",
@@ -17,7 +17,6 @@
     "clean": "rimraf dist lib",
     "lint": "eslint src",
     "prepublish": "npm run test && npm run lint && npm run clean && npm run build",
-    "postinstall": "npm run clean && npm run build",
     "test": "mocha --compilers js:babel-register --recursive 'src/**/__tests__/*' --require src/__tests__/setup.js",
     "test:watch": "npm test -- --watch",
     "test:cov": "babel-node ./node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha -- --recursive 'src/**/__tests__/*' --require src/__tests__/setup.js",
